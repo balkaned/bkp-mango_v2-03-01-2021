@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.search-input {
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 100%;
+    line-height: 100%;
+    padding-left: 1rem;
+    color: $mango-text-dark;
+    font-family: $open-sans-regular;
+  }
+}
+
+.btn-buscar {
+  background-color: $mango-orange;
+  cursor: pointer;
+  border-left: 1px solid $mango-text-light;
+}
+
+.btn-buscar:hover, .btn-buscar:active {
+  background-color: $mango-yellow 
+}
+
+
+.col {
+  font-family: $open-sans-bold;
+  font-size: $small-font-size;
+  color: white;
+}
+
+img {
+  height: 1.3rem;
+  width: auto;
+}
+
+.row-host {
+  border: 1px solid $mango-text-light;
+}

@@ -1,0 +1,155 @@
+<simple-notifications></simple-notifications>
+<app-header></app-header>
+<div *ngIf="!ofertaSeleccionada" class="">
+  <!-- <div
+  class="container"> -->
+  <div class="row">
+    <div class="col-3 p-0">
+      <div class="row w-100 m-0 cabecera justify-content-between">
+        <div class="col-auto"><span class="titulo">Mi Perfil</span></div>
+        <div class="col-auto align-self-center">
+          <!-- <img class="imagen-icono" (click)="redireccionarAMiPerfil()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACPUlEQVRYheXUPW/TUBSA4fc4iU2qAiOCgY8BCVR1KgNBCFVAJ4hoqxrB1h1B2z/Ab+CjAxMzbT6bgoQEE8LJwkIrEAsMwC8AIdHYyWGgEY7j0JjYFIk7JblHeV7FNxf+95VK8ssn5+f3HDx6/Mbhk2PGp3dvP4fNSFJ4zraz4ukaMAU0RcR2yoXaXwkI4J0VGmEkESCergZwAFNVi2dm5q50zcYJ52w72wTTanEW1RJghYy5qnq1US1VIcZfIGfbWcOlZrn63Gy7jhg6C2yFjGZEZDU3M3c5toAOrqIXEU41ST/LtFr130Ygt2MJ6MI7yx+hzIRFCO2HQwdsn/b1LjwYgdcIRqiw5FRKD4YK6ODAhb5DvghFpoHvKiw1ysU7v0aSwv1LeWXiTXmZzL6XhcJH/1bkqzgyDiAcaonx2ikVneBWpEfwRzggKjfrleKj8LZo+GPgfFTcqRaW++7vJg4DPIKJfH4kKRx2OIQT+fyIlbbWo+IIt+qV4o74z9Ek8HLx/uDju4gDpMM+tNJWJTKOLtTLpUg49J4BmbTt0ZbKF2CWge8JXahXSvei4gSB09PXjjQ9npgpniJyHfCSxHsC0uqOg54bPGI4vCdAUzK+/WrHCFVZHBbvDVDGfe/6RqjKYqNauDss3hMA/oDQCDdOHHz3wJhtm/s9/UboX1NemGkuNV3jQL268j4uHD822m6fAAniH4BNUd3YasqxxtrKZpx4V4Co7lVhWdrGphitDTzvjVOrfY0b/OfWD40qHTEIy9AXAAAAAElFTkSuQmCC"/> -->
+        </div>
+      </div>
+      <div class="row w-100 m-0 cuerpo">
+        <div class="col">
+          <span class="w-100 fuente-grande fuente-gris mt-2 d-block">
+            {{authenticationService?.authentication?.nombres}} {{authenticationService?.authentication?.apellidos}}
+          </span>
+          <span class="w-100 fuente-normal fuente-gris d-block">
+            Representante de Empresa
+          </span>
+          <span class="w-100 fuente-grande fuente-gris mt-3 d-block">
+            RUC de ofertante
+          </span>
+          <span class="w-100 fuente-normal fuente-gris d-block">
+            direccion
+          </span>
+          <span class="w-100 fuente-normal fuente-gris mb-2 d-block">
+            +51 999 999 999
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="row w-100 m-0 cabecera justify-content-between">
+        <div class="col-auto"><span class="titulo">Empleos Ofertados</span></div>
+        <div class="col-auto align-self-center">
+          <img class="imagen-icono" (click)="nuevaOfertaLaboral($event)"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAnklEQVRYhe2VwQ2EMAwEJ26CXmgCIdFDakoPSIgm6MVV3D2IeKAjOiNOvof3mZW981g5CaP6cRqAAnQnS4G8LfNq2SdWgItw6luxLrsD8Cn8G+8xgEcVAAEQAAGQGrf911Igi1M4NbOIU/gB4d6BABD2NnpJBchOEArkZJ3qx+nV8rdlNu38iw4EQAAEQABY1Trb5pN+B+Dq79DqmfQGt7gZbLuudXAAAAAASUVORK5CYII=" />
+        </div>
+      </div>
+      <div class="row w-100 m-0 cuerpo justify-content-center">
+        <div class="col" [hidden]="!ofertas.length || consultando">
+
+          <!-- <div class="con-scroll pr-1"> -->
+
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Posición</th>
+                <th scope="col">Resumen</th>
+                <th scope="col">Salario</th>
+                <th scope="col">Postulantes</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let oferta of ofertas; let i = index">
+                <td><a class="p-8 m-12 fuente-gris"
+                    href="http://localhost:4200/ofertante"><u>{{ oferta.posicion }}</u></a></td>
+                <td>{{ oferta.resumen }}</td>
+                <td>{{ oferta.salario }}</td>
+                <td><button class="btn badge badge-warning" (click)="verDetallesDeOferta(oferta)">
+                  <span class="badge badge-warning">
+                    <a >
+                        {{ oferta.postulantes }}
+                    </a>
+                  </span>
+                </button></td>
+                <td>
+
+
+                  <button class="btn btn-info mr-1" [routerLink]="['/ofertante']">
+                    <i class="fa fa-pen"></i>
+                  </button>
+
+                  <button class="btn btn-danger" (click)="borrarHeroe( ofertante, i )">
+                    <i class="fa fa-trash"></i>
+                  </button>
+
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <ng-container
+              *ngFor="let oferta of ofertas; let i = index">
+              <ng-template
+                [ngTemplateOutlet]="TemplateOferta"
+                [ngTemplateOutletContext]="{oferta:oferta}">
+              </ng-template>
+            </ng-container> -->
+
+          <!-- </div> -->
+
+        </div>
+        <div class="col-auto align-self-center" [hidden]="!consultando">
+          <img src="./assets/img/loading.gif">
+        </div>
+        <div class="col-auto align-self-center fuente-grande fuente-gris pt-5 pb-5"
+          [hidden]="ofertas.length || consultando">
+          Aun no ha registrado ofertas laborales
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container" [hidden]="!ofertaSeleccionada || authenticationService?.authentication?.tipoUsuario !== 3"> -->
+<div class="container" *ngIf="ofertaSeleccionada">
+  <app-postulantes-oferta [ofertaSeleccionada]="ofertaSeleccionada" (deseleccionar)="deseleccionar($event)">
+  </app-postulantes-oferta>
+</div>
+<!-- <app-footer></app-footer> -->
+
+<ng-template #TemplateOferta let-oferta="oferta">
+  <div class="row oferta w-100 p-2 ml-0 mr-0 mt-3">
+    <div class="col-auto align-self-center p-0">
+      <img class="logo-empresa" [src]="oferta.img ? oferta.img : './assets/img/batman.png'" />
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col fuente-grande fuente-gris pr-0 cursor-pointer" (click)="verDetallesDeOferta(oferta)">
+          <!-- {{oferta.tituloanuncio.length >= 36 ? oferta.tituloanuncio.substring(0, 33) + '...': oferta.nombre}} -->
+          {{oferta.posicion}}
+        </div>
+        <div class="col-auto">
+          <div class="row w-100 p-0 ml-0 mr-0">
+            <div class="col align-self-center pl-1 pr-0 fuente-normal fuente-gris">POSTULANTES:</div>
+            <div class="col-auto align-self-center pl-0">
+              <span class="fuente-normal">&nbsp;Oferta postulante</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fecha fuente-pequeña fuente-gris">
+        <!-- {{ oferta.fechapublicacion | date:'short':'UTC-5':'es_PE' }} -->
+        {{oferta.salario}}
+      </div>
+      <hr class="mt-1 mb-1" />
+      <p class="resumen fuente-normal fuente-gris">
+        <!-- {{ oferta.tituloanuncio ? oferta.tituloanuncio : oferta.funciones }}... -->
+        {{oferta.resumen}}
+      </p>
+    </div>
+    <div class="col-auto">
+      <!-- <img
+        class="imagen-icono gear"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEG0lEQVRYhb2Xy29UVRzHP78zI8UgMTRlaXCBTR9qqZjaGapibGsGEtvLnbHxD3CjiY/YKK6AHQkaJSxM2CkbsTNMG4JGaUnl0cEALUSeMWoCMTFabWNCUmHm/Fz04dx7z0zLhPjd3d/j+/2ex73nXKEGtGYyqx4u6p/AQwAKVwv5bGstXKaWprXWPrcoDiDQ0ukNNP9vBsTKtgiRlvz7ZqDL89oSvt9e0QC6PRqUdKX6RL/fX4lPwoHOHTueMmpGgXXAiBrdU8jlppby3kCzoXTVRWaJtZzNH762JOxlnhfYC9oJzFix3WePHJmsaCDh++1iZWxBvBwjIna/tcaI8CGwyT1WuWSNHZSSKMK7AqlQwYwafbF8QPHgEGSjQxygT9X0SWS+wtA2Y+V4dF6XsE5VA9nAHijks1mU88vJ1AyR4fASxEMlqrBTYLQKzRwix0TtqIq5JRBTtY+C9AIvOTiXuEtid0U8uSqTXvpboMdRnI/Z+FsnR7645epL+H4TVj4V2OpIZyfy2Uw46HwN1ehHkRi670w+61cSByjkctfrZqZ7FD4L56zYT1w97g+RNcGZEckV8rn3AK0kvojx8fHinfX1rwlypjwe15hztiMGtvh+q8C+stBcidLbywmX48LBg3eF4huAXYxZ1Y+7vIHGcK0AJPoyT0hMfZQ0EDhUFL4s5LMD92JgEUkvfQroCkb1miDHEPvVXEPD6XjS82+ANlaeXP2mFnEAQY4rGjIgzQrNqBlc/cdfvxmQyLQE5A03azWgWr3XCmuXPQ1j4Q15n2GAv6tWiG6olVyNPlKdmivmn/X1Dap0g+4Hfg4XWY0cKCuGOHvlHLBTS/LYRD77TGR6k/2ZTQiHQB9fCN2JF6Xp5NGhX+5FPNGf6RDR7wPCal6dGD78U3ldZA9MDA9dtMa+UxZaVYzrAXbvXvHtKZVK1YnogUBQSoNhcacBALHmbii0PXnx8opMpFKputnVaz4HOsrjas0DrvoKhPpm1BWvJy9d/tr1NVtEV39m8+yDa74TeCXSLrzv6qmwB3TSlVtAETghyCjCTWutQcwGQbcx/9Wr+Nqq0l0Yzo6Vx6Jnt+ieaiQLPb2K9qIgIqzgjJqnhr3ML81SQ2AJuvozm4GXV8RWC4SnE146cHsOGNCYnQOmHa1j1miPIluBC1UUJtWyBbEdqB4CSqGC3+NWrgQ9hdDleW2W2AmgHuW8jekHZ3O50f/yA42W0g2XvFp5sjAy9MPic8L3m8TKLuY35XTMygunRoYCV3rnWid8vx0rGwv5bBbHAie99BTRq/mPE/ms8w15ti/TUoxbW8jlrodzzgvkwr19ypUDQMkhYQN6tFJ5eNTlqOnf0EosFyFSqWigGmoyMP/7JZMq3FbhNvBrfHb6dC1c/wLfQoKOjTmtSQAAAABJRU5ErkJggg=="/> -->
+    </div>
+  </div>
+
+
+
+</ng-template>

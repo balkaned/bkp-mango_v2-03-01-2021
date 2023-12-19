@@ -1,0 +1,56 @@
+<div class="modal-header"> 
+  <h4 class="modal-title">Nueva Experiencia Laboral</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form  [formGroup]="forma" (ngSubmit)="registrarExperienciaLaboral()">
+<div class="row ml-0 mr-0 pl-0 pr-0">
+  <div class="col-12 col-md-12 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Nombre de la Empresa</span>
+        <input class="input100 form-control" type="text" formControlName="empresa" name="empresa" placeholder="Empresa"> 
+    </label>
+  </div>
+</div>
+
+<div class="row ml-0 mr-0 pl-0 pr-0">
+  <div class="col-12 col-md-6 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Puesto</span>
+        <input class="input100 form-control" type="text" formControlName="puesto" name="puesto" placeholder="Puesto"> 
+    </label>
+  </div>
+
+  <div class="col-12 col-md-6 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Nivel de Experiencia</span>
+        <input class="input100 form-control" type="text" formControlName="nivelexperiencia" name="nivelexperiencia" placeholder="Nivel de Experiencia"> 
+    </label>
+  </div>
+</div>
+
+<label class="w-100">
+  <span class="w-100">Descripción de responsabilidades</span>
+  <textarea class="form-control" formControlName="descripcionresponsabilidades" name="descripcionresponsabilidades"></textarea>
+</label>
+
+
+
+
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-secondary': getEstado() === 1, 'btn-primary': getEstado() === 0 }" type="submit">
+      Guardar
+    </button>
+  </div>
+</div>
+
+</form>
+</div>
+
+

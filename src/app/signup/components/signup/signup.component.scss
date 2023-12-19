@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.empty-div {
+  min-height: 70vh;
+}
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+#on-top {
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  width: 50vh;
+  height: auto;
+  border-radius: 2.5%;
+  cursor: pointer;
+}
+
+.row {
+  margin: 0;
+}
+
+.container-iniciar-sesion {
+  font-family: $open-sans-bold;
+  font-size: $bigger-font-size;
+  color: white;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.container-iniciar-sesion:hover, .container-iniciar-sesion:active {
+  color: $mango-orange
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@import "./assets/styles/variables";
+
+@font-face {
+  font-family: 'Agency FB Regular';
+  src: url('./assets/fonts/Agency-FB-Regular.ttf') format('truetype');
+};
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+};
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('./assets/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('./assets/fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+body {
+  background-color: $mango-background-light;
+}
+
+.btn-primary {
+  font-family: $open-sans-bold;
+  background-color: $mango-orange;
+  border: 0
+}
+.btn-primary:hover { background-color: $mango-yellow }
+.btn-primary:active { background-color: $mango-green }
+
+a {
+  font-family: $open-sans-bold;
+  color: $mango-orange
+}
+a:active { color: $mango-green }
+a:hover { color: $mango-yellow }
+
+input {
+  font-family: $open-sans-regular;
+}
+
+body{
+  margin: 0;
+}
+
+.modal-content {
+  background-color: transparent;
+}
+
+.modal-header {
+  background-color: $mango-yellow;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1.5px solid $mango-text-dark;
+  padding: 0.25rem 0.5rem;
+  font-family: $open-sans-light;
+  color: $mango-text-dark;
+  font-size: $big-font-size
+}
+
+.modal-body {
+  background-color: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1.5px solid $mango-text-dark;
+  margin-top: -2.5px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  padding: 0.5rem 1rem;
+}
+
+/* EL SIGUIENTE CODIGO ES PARA COLOCAR UNA ANIMACION DE CARGAR */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 32px;
+  height: $normal-font-size;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 0.5rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $mango-orange;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 3px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 3px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 13px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 13px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(9px, 0);
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

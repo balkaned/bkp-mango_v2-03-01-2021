@@ -1,0 +1,133 @@
+<!-- <div class="limiter">
+  <div class="container-login100">
+      <div class="wrap-login100 p-t-50 p-b-90">
+          <form class="login100-form validate-form flex-sb flex-w" [formGroup]="forma" (ngSubmit)="guardar()">
+
+              <span class="login100-form-title p-b-51">
+                      Crear nueva cuenta
+                  </span>
+ 
+              <div class="wrap-input100 m-b-16">
+                  <input class="input100 form-control" type="text" formControlName="nombre" name="nombre" placeholder="Nombre">
+
+                  <span class="focus-input100"></span>
+              </div>
+
+              <div class="wrap-input100 m-b-16">
+                  <input class="input100 form-control" type="text" formControlName="apellido" name="apellido" placeholder="Apellidos">
+
+                  <span class="focus-input100"></span>
+              </div>
+
+              <div class="wrap-input100 m-b-16">
+                    <input class="input100 form-control" type="text" formControlName="titulo" name="titulo" placeholder="Título">
+  
+                    <span class="focus-input100"></span>
+                </div>
+
+              <div class="wrap-input100 m-b-16">
+                  <input class="input100 form-control" type="text" formControlName="correo" name="correo" placeholder="Correo">
+                  <span class="focus-input100"></span>
+              </div>
+
+              <div class="wrap-input100 m-b-16" data-validate="Password is required">
+                  <input class="input100 form-control" type="password" formControlName="clave" name="clave" placeholder="Contraseña">
+                  <span class="focus-input100"></span>
+              </div>
+
+              <div class="container-login100-form-btn m-t-17 form-group">
+                  <button class="login100-form-btn" type="submit">
+                          Crear cuenta
+                      </button>
+              </div>
+
+        
+
+          </form>
+      </div>
+  </div>
+</div> -->
+
+ 
+
+
+
+<div class="modal-header">
+    <h4 class="modal-title">Registro</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <form [formGroup]="forma" (ngSubmit)="guardar()">
+
+        <div class="row ml-0 mr-0 pl-0 pr-0">
+            <div class="col-12 col-md-12 ml-0 pl-0">
+                <label class="w-100">
+                    <span class="w-100">Nombre</span>
+                    <input class="input100 form-control" type="text" formControlName="nombre" name="nombre"
+                        placeholder="Nombre">
+                </label>
+            </div>
+        </div>
+
+        <div class="row ml-0 mr-0 pl-0 pr-0">
+            <div class="col-12 col-md-12 ml-0 pl-0">
+                <label class="w-100">
+                    <span class="w-100">Apellidos</span>
+                    <input class="input100 form-control" type="text" formControlName="apellido" name="apellido"
+                        placeholder="Apellidos">
+                </label>
+            </div>
+        </div>
+
+        <div class="row ml-0 mr-0 pl-0 pr-0">
+            <div class="col-12 col-md-12 ml-0 pl-0">
+                <label class="w-100">
+                    <span class="w-100">Título</span>
+                    <input class="input100 form-control" type="text" formControlName="titulo" name="titulo"
+                        placeholder="Título">
+                </label>
+            </div>
+        </div>
+
+        <div class="row ml-0 mr-0 pl-0 pr-0">
+            <div class="col-12 col-md-12 ml-0 pl-0">
+                <label class="w-100">
+                    <span class="w-100">Correo</span>
+                    <input class="input100 form-control" type="text" formControlName="correo" name="correo"
+                        placeholder="Correo">
+                </label>
+            </div>
+        </div>
+
+        <div class="row ml-0 mr-0 pl-0 pr-0">
+            <div class="col-12 col-md-12 ml-0 pl-0">
+                <label class="w-100">
+                    <span class="w-100">Clave</span>
+                    <input class="input100 form-control" type="text" formControlName="clave" name="clave"
+                        placeholder="Clave">
+                </label>
+            </div>
+        </div>
+
+
+        <div class="container">
+                <div class="row justify-content-end">
+                  <div class="col-auto">
+                    <button
+                      class="btn"
+                      [ngClass]="{ 'btn-secondary': getEstado() === 0, 'btn-primary': getEstado() === 1 }"
+                      (click)="registrarme()">
+                      <span *ngIf="registrando !== true">Registrarme</span>
+                      <div *ngIf="registrando === true" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+
+    </form>
+</div>

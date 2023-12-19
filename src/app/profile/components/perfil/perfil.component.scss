@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.fuente-pequeña {
+  font-family: $open-sans-bold;
+  font-size: $small-font-size;
+}
+
+.fuente-normal {
+  font-family: $open-sans-regular;
+  font-size: $normal-font-size;
+}
+
+.fuente-grande {
+  font-family: $open-sans-bold;
+  font-size: $big-font-size;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.fuente-pequeña {
+  font-family: $open-sans-regular;
+  font-size: $small-font-size;
+}
+
+.fuente-gris-oscuro {
+  color: $mango-text-darker;
+}
+
+.fuente-gris {
+  color: $mango-text-dark;
+}
+
+.imagen-persona {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.seccion {
+  background-color: white;
+  border-radius: 15px;
+  border: solid 1.5px $mango-text-light;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  padding: 1rem;
+}
+
+label.w-100 {
+  span.w-100 {
+    font-family: $open-sans-bold;
+    color: $mango-text-dark;
+    font-size: $small-font-size
+  }
+}
+
+.titulo {
+  font-size: 2rem !important;
+}
+
+.tipo-enlace {
+  cursor: pointer !important;
+  color: blue !important;
+  text-decoration: underline !important;
+}
+
+.tipo-enlace:active, .tipo-enlace:hover {
+  color: $mango-orange !important;
+}
+
+a {
+  font-family: $open-sans-bold;
+  color: blue;
+}
+
+.imagen-icono {
+  height: 1.5rem;
+  width: auto;
+  cursor: pointer;
+}

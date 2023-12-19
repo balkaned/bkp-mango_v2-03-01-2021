@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+label.w-100 {
+  span.w-100 {
+    font-family: $open-sans-bold;
+    color: $mango-text-dark;
+    font-size: $small-font-size
+  }
+}
+
+.invalid-feedback { display: block }
+
+.imagen-icono {
+  height: 1.5rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.imagen-icono-sm {
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+}

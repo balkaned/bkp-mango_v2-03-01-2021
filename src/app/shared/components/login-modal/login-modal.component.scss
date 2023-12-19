@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.grupo-filtro {
+    background-color: rgb(51, 141, 156);
+    font-family: $open-sans-bold;
+    font-size: $bigger-font-size;
+    color: $mango-text-white;
+  }
+
+.cerrar {
+    color: $mango-text-white; 
+}
+

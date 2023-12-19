@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+$min-name-width: 155px;
+
+.boton-iniciar-sesion {
+  margin-right: 25px;
+  margin-left: 20px
+}
+
+span.logout {
+  font-family: $open-sans-light;
+  color: $mango-orange;
+}
+
+span.logout:hover, span.logout:active {
+  text-decoration: underline;
+  color: $mango-yellow
+}
+
+.user-row {
+  min-width: $min-name-width + 50px
+}
+
+.user-name {
+  font-family: $agency-fb-regular;
+  font-size: $bigger-font-size;
+  color: $mango-text-dark;
+}
+
+.user-image {
+  height: 50px;
+  width: auto;
+}
+
+.caret {
+  height: 1.5rem;
+  width: auto;
+  padding-bottom: 0.25rem;
+}
+
+:host ::ng-deep .tooltip-arrow,
+:host ::ng-deep .tooltip-arrow:before
+{
+  border-bottom-color: $mango-yellow
+}
+
+:host ::ng-deep bs-tooltip-container.tooltip {
+  pointer-events: all;
+}
+
+:host ::ng-deep .tooltip-inner {
+  background-color: $mango-yellow;
+  color: $mango-text-darker;
+  min-width: $min-name-width;
+  padding: 8px 10px;
+}
+
+.logged-in-tooltip-row img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.logged-in-tooltip-row span {
+  font-family: $open-sans-bold;
+  font-size: $normal-font-size;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.logged-in-tooltip-row:hover span {
+  text-decoration: underline;
+}
+
+.link-empresas {
+  font-family: $open-sans-bold !important;
+  // color: $mango-blue !important;
+  color: $mango-orange !important;
+  cursor: pointer
+}
+.link-empresas:active { color: $mango-green !important }
+// .link-empresas:hover { color: $mango-blue !important }
+.link-empresas:hover { color: $mango-orange !important }
+
+.link-empresas:active,
+.link-empresas:hover {
+  text-decoration: underline !important
+}
+
+
+.grupo-filtro {
+  background-color: rgb(51, 141, 156);
+  // font-family: $open-sans-bold;
+  // font-size: $bigger-font-size;
+  // color: $mango-text-white;
+}

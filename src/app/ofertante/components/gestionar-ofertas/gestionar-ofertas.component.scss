@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.titulo {
+  color: $mango-text-dark;
+  font-family: $open-sans-bold;
+  font-size: $big-font-size;
+}
+
+.fuente-pequeña {
+  font-family: $open-sans-bold;
+  font-size: $small-font-size;
+}
+
+.fuente-normal {
+  font-family: $open-sans-regular;
+  font-size: $normal-font-size;
+}
+
+.fuente-grande {
+  font-family: $open-sans-bold;
+  font-size: $big-font-size;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.fuente-gris-oscuro {
+  color: $mango-text-darker;
+}
+
+.fuente-gris {
+  color: $mango-text-dark;
+}
+
+.cabecera, .cuerpo {
+  padding: 0.25rem 0.5rem;
+}
+
+.cabecera {
+  background-color: $mango-yellow;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1.5px solid $mango-text-dark;
+}
+
+.cuerpo {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1.5px solid $mango-text-dark;
+  margin-top: -2.5px !important;
+}
+
+.imagen-icono {
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.logo-empresa {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(12px, 0);
+  }
+}
+
+@-webkit-keyframes ckw {
+  0% {
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  100% {
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes ckw {
+  0% {
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  100% {
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.gear:hover, .gear:active {
+  -moz-animation-name: ckw;
+  -moz-animation-duration: 3.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: normal;
+  -moz-animation-delay: 0;
+  -moz-animation-play-state: running;
+  -moz-animation-fill-mode: forwards;
+
+  -webkit-animation-name: ckw;
+  -webkit-animation-duration: 3.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-delay: 0;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.con-scroll {
+  height: 55vh;
+  overflow-y: scroll;
+}
+
+.oferta {
+  background-color: $mango-background-light;
+  border-radius: 15px;
+  border: solid 1.5px $mango-text-light;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.cursor-pointer { cursor: pointer; }

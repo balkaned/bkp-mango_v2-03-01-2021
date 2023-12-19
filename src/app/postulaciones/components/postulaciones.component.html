@@ -1,0 +1,87 @@
+<simple-notifications></simple-notifications>
+<app-header></app-header>
+<h2 class="text-center fuente-grande fuente-gris titulo">Mis postulaciones</h2>
+
+    <div class="container-fluid">
+        <div class="row mt-2 contenedor-secciones">
+<!--SECCIÓN PERFIL-->
+<!-- <div
+  class="col-auto pt-2"
+  [ngClass] = "{
+    'por-definir': ofertaSeleccionada
+  }"
+  [hidden]="ofertaSeleccionada">
+  <app-filtros-ofertas
+  (filtroChange)="onFiltroChange($event)"
+  (error)="onError($event)">
+</app-filtros-ofertas>
+  </div> -->
+
+  
+    <div class="col-3 p-0" [hidden]="ofertaSeleccionada">
+      <div class="row w-100 m-0 cabecera justify-content-between">
+        <div class="col-auto"><span class="titulo">Mi Perfil</span></div>
+        <div class="col-auto align-self-center">
+          <!-- <img class="imagen-icono" (click)="redireccionarAMiPerfil()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACPUlEQVRYheXUPW/TUBSA4fc4iU2qAiOCgY8BCVR1KgNBCFVAJ4hoqxrB1h1B2z/Ab+CjAxMzbT6bgoQEE8LJwkIrEAsMwC8AIdHYyWGgEY7j0JjYFIk7JblHeV7FNxf+95VK8ssn5+f3HDx6/Mbhk2PGp3dvP4fNSFJ4zraz4ukaMAU0RcR2yoXaXwkI4J0VGmEkESCergZwAFNVi2dm5q50zcYJ52w72wTTanEW1RJghYy5qnq1US1VIcZfIGfbWcOlZrn63Gy7jhg6C2yFjGZEZDU3M3c5toAOrqIXEU41ST/LtFr130Ygt2MJ6MI7yx+hzIRFCO2HQwdsn/b1LjwYgdcIRqiw5FRKD4YK6ODAhb5DvghFpoHvKiw1ysU7v0aSwv1LeWXiTXmZzL6XhcJH/1bkqzgyDiAcaonx2ikVneBWpEfwRzggKjfrleKj8LZo+GPgfFTcqRaW++7vJg4DPIKJfH4kKRx2OIQT+fyIlbbWo+IIt+qV4o74z9Ek8HLx/uDju4gDpMM+tNJWJTKOLtTLpUg49J4BmbTt0ZbKF2CWge8JXahXSvei4gSB09PXjjQ9npgpniJyHfCSxHsC0uqOg54bPGI4vCdAUzK+/WrHCFVZHBbvDVDGfe/6RqjKYqNauDss3hMA/oDQCDdOHHz3wJhtm/s9/UboX1NemGkuNV3jQL268j4uHD822m6fAAniH4BNUd3YasqxxtrKZpx4V4Co7lVhWdrGphitDTzvjVOrfY0b/OfWD40qHTEIy9AXAAAAAElFTkSuQmCC"/> -->
+        </div>
+      </div>
+      <div class="row w-100 m-0 cuerpo">
+        <div class="col">
+          <span class="w-100 fuente-grande fuente-gris mt-2 d-block">
+            {{authenticationService?.authentication?.nombres}} {{authenticationService?.authentication?.apellidos}}
+          </span>
+          <span class="w-100 fuente-normal fuente-gris d-block">
+            {{authenticationService?.authentication?.correo}}
+          </span>
+          <span class="w-100 fuente-normal fuente-gris d-block">
+            {{authenticationService?.authentication?.postulante?.titulo}}
+          </span>
+          <!-- <span class="w-100 fuente-grande fuente-gris mt-3 d-block">
+            RUC de ofertante
+          </span>
+          <span class="w-100 fuente-normal fuente-gris d-block">
+            direccion
+          </span>
+          <span class="w-100 fuente-normal fuente-gris mb-2 d-block">
+            +51 999 999 999
+          </span> -->
+        </div>
+      </div>
+    </div>
+
+    <!--SECCIÓN EMPLEOS POSTULADOS-->
+
+    <div
+  class="seccion col pt-2"
+  [ngClass] = "{
+    'por-definir-2': ofertaSeleccionada,
+    'por-definir': ofertaSeleccionada === undefined || ofertaSeleccionada === null
+  }">
+  <app-postulaciones-busqueda-ofertas
+  (busqueda)="onNuevoTerminoDeBusqueda($event)" 
+  (selected)="onOfertaSelected($event)" 
+  [postulaciones]="postulaciones"></app-postulaciones-busqueda-ofertas>
+  </div>
+
+
+
+  <!--SECCIÓN DETALLE OFERTA-->
+
+  <div class="col-12 col-md-5 seccion pt-2"
+    [hidden]="ofertaSeleccionada === null || ofertaSeleccionada == undefined">
+    <app-postulaciones-detalles-oferta 
+    [idOfertaLab]="ofertaSeleccionada?.idOferta"
+    (postulacion)="postular($event)"
+    (retroceder)="onRetrocederDesdeDetallesDeOferta($event)"></app-postulaciones-detalles-oferta>
+    </div>
+
+    <!-- <div class="col-9"> 
+
+          </div> -->
+
+
+          </div>
+          </div>
+  
+
+

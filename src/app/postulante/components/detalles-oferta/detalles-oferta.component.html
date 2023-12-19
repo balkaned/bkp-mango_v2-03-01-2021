@@ -1,0 +1,48 @@
+<div class="row justify-content-center" *ngIf="!oferta">
+  <div class="col-auto">
+    <img src="./assets/img/loading.gif">
+  </div>
+</div>
+<div class="container" *ngIf="oferta">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col-auto">
+          <img
+            class="logo-empresa"
+            [src]="oferta.ruta ? oferta.ruta : './assets/img/image-placeholder.png'"/>
+        </div>
+        <div class="col">
+          <p class="titulo mb-0">{{oferta?.posicion}}</p>
+          <!-- <p class="fecha">{{ oferta?.fechapublicacion | date:'short':'UTC-5':'es_PE' }} - {{ oferta?.fechapublicacion | tiempoDesde }}</p>         -->
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <img
+        (click)="onRetroceder()"
+        class="icono-back"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEyElEQVRoge2Zz09UVxTHP+c9lE0TIYNJS6JbB+rKXW2aTAdtuqpdONigVZvURPwHrKEwz0FS/QdqExcVRYODG7rTVkLStN25MjD+A3QhE+xS4L3jYh4y7837cd+A2Bi+u7n3nnO+Z96955x7LuxiF1uCbKcydQpd2NYRkD5Uu1G6fCsvEVkBXcT1nooz/3K7bG7ZAXUKeWzrFHAS5bCh1WfAQ1zvgTjzta3Yb9sBrXz+KUgZOL4VAsBjLK7Kj3N/tyOc2QF1jvdiuTeBr9oxmIDfsNcuysif/2YRyuSAXh04hehNoDsTNXOsoDIs5ScPTAUsk0WqiI4Xy4hO8/bIA3QjOq2VgTFVsz83dZEqwnjxZ+Dilullwy+Mzl0SQZMWpX+B8YFRdp48wEXfdiISv4C/56e3j1MbUPkm6UzEOuBHm2e83T1vghXstY/jolP8FmqESlPyS8ByBlLLvowJunH33oybjHRArxWPYhrnlRvkcwfxvAPAlIHEFJ53gHzuIMoNIxvoCa0MfBI10xG53qNsppcJxuZG/UjharV0nlod4EzkeuEuh3LfyeCMC6DKFSrFdYQRA2tl4MtWlWFOTiGPZS0akL/B2NyVcJjTasnm+fIkKqdDElPkc+c3yL9ZrwiV4k8Il1Ntel5fuHZq3UKNwiwNS/TlRqJitAzOuBzqOQfc3xzUe1HkAURQ+nIjmJwJyx5sGYpYdjJVEexl4cWeuEkZnHHxvA0n7nOo51wU+Tdo6NqbalW0FB4KOKBOocuwJO7Bsm5ptWTH2nLm1/G8c3heInmtlmws6xbQk2pVOazXj+1rHgp+Ads6kqpkE2d4Xv81zQlx5tdj+VRLNrX6beIOfRReaYBjaAtJn7EiAOVbavXbSU7Eim4c9izkASz6gz8DWrWdrHuG58uTWZxQp9BBrX4nIlIZCAc5hhzw77CZlcppavU76hSi80rzUqfQgWVNAkPt2QpyNLoP/J8RdEBor1vQiPNnkw7sm6Ub0ak5T2SyFeQYckBW2lA5lRrnwxyc+XXyubOI3stsLcQxtIU0vYQIKONuXIZNFd3M2CYF4CY8Fpp/Bh1wvacZVE01F2ZRUKfQkXSwZXDGJZ87TxYnOiXAMeCAOPMv/aZTGpbp6vw+jTyWNYllJYZYv+y4gMl9QngmP/zxX/NQVBR6mKoIVvnwg/gMGwyVQ9TqdxLzRP/+NWA11arKTHio1QHXM+nJ9LJYn4hqffi1TTjOD8UlO1WExfoE0Jtq1XOr4aEWB/x6+3GqMuEyleJ4sxNN5UFrkmoku0DZ4d8Fxo3uAsijqD5q5KVerxWP4vFXulIaF5u+3AgLL/b4VWVabTOF512gf/8ai/UJM/IAclTGnvzTMhrLq1Kcxbz/uUSjnk8viRtYprHn07cNADIrY0++jpqJLyU8exgwTWy9mJPHX2tInhXs1eG4yVgHxPl9CZVYwR2DynBSxzqxmGt0xMSsQ/FWIOW0TvX739wVQRmdu7SjX0J0zIQ8vAcPHNmfmCY++6jRq9QTWWVTqMxiryYe2Eipds35ya4MfNGuDp/CI+BqVJIykt6a8Y1WpD2IaCnTM6vKDJ5bfWfPrFHQ68f28UqPYNEf+dDtsUCnPA2XxLvYxTvEayTJ4DnslYBYAAAAAElFTkSuQmCC"/>
+    </div>
+  </div>
+  <hr/>
+
+  <p>{{ oferta?.resumen }}</p>
+
+  <!-- <div class="subtitulo">Funciones:</div>
+  <p>{{ oferta?.funciones }}</p>
+
+  <div class="subtitulo">Requisitos:</div>
+  <p>{{ oferta?.requisitos }}</p> -->
+
+  <div class="row justify-content-center">
+    <div class="col-auto" >
+      <button class="btn btn-primary" *ngIf="!oferta?.postulado" (click)="postular()">Postular</button>
+      <button disabled class="btn btn-secondary" *ngIf="oferta?.postulado" (click)="onRetroceder()">Ya has postulado</button>
+    </div>
+  </div>
+</div>
+
+
+
+

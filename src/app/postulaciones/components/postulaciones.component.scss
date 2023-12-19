@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import "../../../assets/styles/variables";
+
+// $open-sans-bold: 'Open Sans Bold', arial, sans-serif;
+// $open-sans-regular: 'Open Sans Regular', arial, sans-serif;
+// $open-sans-light: 'Open Sans Light', arial, sans-serif;
+
+// $agency-fb-regular: 'Agency FB Regular', arial, sans-serif;
+
+// $mango-orange: #FF8242;
+// $mango-yellow: #FFCC22;
+// $mango-green: #43ff82;
+// $mango-background-light: #f6fff6;
+// $mango-text-light: #929AA2;
+// $mango-text-dark: #3A5154;
+// $mango-text-darker: #1D2625;
+
+// $biggest-font-size: 1.75rem;
+// $bigger-font-size: 1.5rem;
+// $big-font-size: 1.25rem;
+// $normal-font-size: 1rem;
+// $small-font-size: 0.9rem;
+// $smaller-font-size: 0.8rem;
+// $smallest-font-size: 0.7rem;
+
+.titulo {
+  font-family: $open-sans-bold;
+  font-size: $big-font-size;
+  color: $mango-text-dark;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.subtitulo {
+  font-family: $open-sans-bold;
+  font-size: $normal-font-size;
+  color: $mango-text-dark;
+}
+
+.fecha {
+  font-family: $open-sans-regular;
+  font-size: $smaller-font-size;
+  color: $mango-text-dark;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+.icono-back {
+  height: 32px;
+  width: auto;
+  cursor: pointer;
+}
+
+.logo-empresa, .foto-postulante {
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.foto-postulante {
+  border-radius: 50%;
+}
+
+:host {
+  display: block;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  padding: 20px;
+}
+
+.postulante {
+  border-radius: 15px;
+  background-color: $mango-background-light;
+  box-shadow: 0 -2px 6px rgba(0,0,0,.15);
+  
+}
+
+.imagen-icono {
+  height: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.fuente-pequeña {
+  font-family: $open-sans-bold;
+  font-size: $small-font-size;
+}
+
+.fuente-normal {
+  font-family: $open-sans-regular;
+  font-size: $normal-font-size;
+}
+
+.fuente-grande {
+  font-family: $open-sans-bold;
+  font-size: $big-font-size;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.fuente-gris-oscuro {
+  color: $mango-text-darker;
+}
+
+.fuente-gris {
+  color: $mango-text-dark;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}

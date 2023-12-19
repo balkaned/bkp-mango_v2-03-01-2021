@@ -1,0 +1,63 @@
+<simple-notifications></simple-notifications>
+<app-header>
+  <div>
+    
+  </div>
+  <!-- <app-input-buscador-ofertas [hidden]="!ofertaSeleccionada?.idOferta"></app-input-buscador-ofertas> -->
+  <!-- <app-input-buscador-ofertas></app-input-buscador-ofertas> -->
+
+</app-header>
+<div class="row justify-content-center" >
+  <!-- <div class="col-auto"><img src="./assets/img/loading.gif"/></div> -->
+</div>
+<div class="container-fluid">
+  <div class="row mt-2 contenedor-secciones">
+    <!--<div class="col-3 pt-2" [hidden]="ofertaSeleccionada">
+      <h2 class="titulo-filtros pl-2">Filtros de B&uacute;squeda: </h2>
+      <app-filtros-ofertas
+        (filtroChange)="onFiltroChange($event)"
+        (error)="onError($event)">
+      </app-filtros-ofertas>
+    </div>-->
+
+    <div
+  class="col-auto pt-2"
+  [ngClass] = "{
+    'por-definir': ofertaSeleccionada
+  }"
+  [hidden]="ofertaSeleccionada">
+  <app-filtros-ofertas
+  (filtroChange)="onFiltroChange($event)"
+  (error)="onError($event)">
+</app-filtros-ofertas>
+  </div>
+
+
+
+  <div
+  class="seccion col pt-2"
+  [ngClass] = "{
+    'por-definir-2': ofertaSeleccionada,
+    'por-definir': ofertaSeleccionada === undefined || ofertaSeleccionada === null
+  }">
+  <app-busqueda-ofertas
+  (busqueda)="onNuevoTerminoDeBusqueda($event)"
+  (selected)="onOfertaSelected($event)" 
+  [ofertas]="ofertas"></app-busqueda-ofertas>
+  </div>
+
+
+    
+  
+
+    <div class="col-12 col-md-5 seccion pt-2"
+    [hidden]="ofertaSeleccionada === null || ofertaSeleccionada == undefined">
+    <app-detalles-oferta 
+    [idOfertaLab]="ofertaSeleccionada?.idOferta"
+    (postulacion)="postular($event)"
+    (retroceder)="onRetrocederDesdeDetallesDeOferta($event)"></app-detalles-oferta>
+    </div>
+
+  </div> 
+</div> 
+<!-- <app-footer></app-footer> -->

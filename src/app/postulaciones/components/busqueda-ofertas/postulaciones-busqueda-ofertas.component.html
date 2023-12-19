@@ -1,0 +1,71 @@
+
+
+
+
+
+      <div class="row w-100 m-0 cabecera justify-content-between">
+        <div class="col-auto"><span class="titulo">Empleos Postulados</span></div>
+        <!-- <div class="col-auto align-self-center">
+          <img class="imagen-icono" (click)="nuevaOfertaLaboral($event)"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAnklEQVRYhe2VwQ2EMAwEJ26CXmgCIdFDakoPSIgm6MVV3D2IeKAjOiNOvof3mZW981g5CaP6cRqAAnQnS4G8LfNq2SdWgItw6luxLrsD8Cn8G+8xgEcVAAEQAAGQGrf911Igi1M4NbOIU/gB4d6BABD2NnpJBchOEArkZJ3qx+nV8rdlNu38iw4EQAAEQABY1Trb5pN+B+Dq79DqmfQGt7gZbLuudXAAAAAASUVORK5CYII=" />
+        </div> -->
+      </div>
+      <div class="row w-100 m-0 cuerpo justify-content-center">
+        <div class="col" [hidden]="!postulaciones.length || consultando">
+
+          <!-- <div class="con-scroll pr-1"> -->
+
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Posición</th>
+                <th scope="col">Resumen</th>
+                <th scope="col">Salario</th>
+                <!-- <th scope="col"></th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let oferta of postulaciones; let i = index">
+                <!-- <td><a class="p-8 m-12 fuente-gris"
+                    ><u>{{ oferta.posicion }}</u></a></td>  -->
+                <td><a class="p-8 m-12 subtitulo" (click)="onOfertaSelected(oferta)"><u>{{ primeraPalabra(oferta.posicion) }}</u></a></td>
+                <td>{{ oferta.resumen }}</td>
+                <td>{{ oferta.salario }}</td> 
+                <!-- <td>
+
+
+                  <button class="btn btn-info mr-1" [routerLink]="['/ofertante']">
+                    <i class="fa fa-pen"></i>
+                  </button>
+
+                  <button class="btn btn-danger" (click)="borrarHeroe( ofertante, i )">
+                    <i class="fa fa-trash"></i>
+                  </button>
+
+
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <ng-container
+              *ngFor="let oferta of ofertas; let i = index">
+              <ng-template
+                [ngTemplateOutlet]="TemplateOferta"
+                [ngTemplateOutletContext]="{oferta:oferta}">
+              </ng-template>
+            </ng-container> -->
+
+          <!-- </div> -->
+
+        </div>
+        <div class="col-auto align-self-center" [hidden]="!consultando">
+          <img src="./assets/img/loading.gif">
+        </div>
+        <div class="col-auto align-self-center fuente-grande fuente-gris pt-5 pb-5"
+          [hidden]="postulaciones.length || consultando">
+          Aun no ha registrodo postulaciones
+        </div>
+      </div>
+
+      

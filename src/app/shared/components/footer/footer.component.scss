@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+footer {
+  color: white;
+  background-color: $mango-yellow;
+  padding-bottom: 10px;
+  min-height: 70px
+}
+
+.logo-mango {
+  height: 50px;
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+div.col.hr > hr {
+  color: white;
+  background-color: white;
+  margin-top: 0.5rem
+}
+
+p {
+  font-family: $open-sans-regular;
+}
+
+:host {
+  display: block;
+  margin-top: 15px;
+}

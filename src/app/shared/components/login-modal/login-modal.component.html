@@ -1,0 +1,53 @@
+<!-- <div class="modal-header grupo-filtro "> -->
+    <div class="modal-header ">
+  <h4 class="modal-title">Iniciar Sesi&oacute;n</h4>
+  <button type="button" class="close pull-right cerrar" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <form  [formGroup]="forma" (ngSubmit)="iniciarSesion()"> 
+  <label class="w-100">
+    <span class="w-100">Email</span>
+    <input class="input100 form-control" type="text" formControlName="correo" name="correo" placeholder="Correo"> 
+    <!-- <input
+      type="email"
+      class="form-control"
+      [(ngModel)]="email"
+      [ngClass]="{ 'is-invalid': error }"
+      [disabled]="estado === 0"> -->
+  </label>
+  
+  <label class="w-100">
+    <span class="w-100">Password</span>
+    <input class="input100 form-control" type="password" formControlName="clave" name="clave" placeholder="Contraseña">
+    <!-- <input
+      type="password"
+      class="form-control"
+      [(ngModel)]="password"
+      [ngClass]="{ 'is-invalid': error }"
+      [disabled]="estado === 0"
+      (keyup.enter)="iniciarSesion()"> -->
+  </label>
+  <ng-container *ngIf="error">
+    <alert type="danger" [dismissible]="true" (onClosed)="error = null">{{ error }}</alert>
+  </ng-container>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+        <button class="btn" [ngClass]="{'btn-primary': estado === 1, 'btn-secondary': estado === 0}" type="submit">
+            <!-- <button class="btn" [ngClass]="{'btn-info': estado === 1, 'btn-secondary': estado === 0}" type="submit"> -->
+
+            Acceder
+        </button>
+      <!-- <button
+        class="btn"
+        (click)="iniciarSesion()"
+        [ngClass]="{'btn-primary': estado === 1, 'btn-secondary': estado === 0}"
+        [disabled]="estado === 0">
+          <span *ngIf="estado === 1">Acceder</span>
+          <div *ngIf="estado === 0" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+      </button> -->
+    </div>
+  </div>
+  </form>
+</div>

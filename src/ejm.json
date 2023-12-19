@@ -1,0 +1,30 @@
+{ 
+  "email": "ariana@gmail.com",
+  "ruta": "C:/Users/Jaime Lopez/Desktop/ImagenesMango/Usuario/foto1f.jpg",
+  "estado": "Activo    ",
+  "tipousuario": "2         ",
+  "idusuario": 167,
+  "usuario": "Usuario167",
+  "fechacreacion": "2019-04-11T08:36:44.000+0000",
+  "password": "apass",
+  "idusuario_MASTER": 0,
+  "postulante": {
+    "ruta": "C:/Users/Jaime Lopez/Desktop/CVS/cvariana.docx",
+    "nombres": "Ariana",
+    "apellidopaterno": "Quispe",
+    "apellidomaterno": "Mamani",
+    "titulo": "Analista Mercantil",
+    "resumen": "Experta en comercializar con empresas internacionales",
+    "enlace": "ariana.web.com"
+  },
+  "ofertante": {
+    "ruta": "C:/Users/Jaime Lopez/Desktop/ImagenesMango/Usuario/fotologoempresa.jpg",
+    "tipodocumento": "DNI",
+    "nrodocumento": "74936438",
+    "rubro": "3674",
+    "ruc": "Bitel",
+    "representante": "Josué Paredes",
+    "resumen": "Bitel, subsidiaria del Holding Viettel Group, una de las empresas de telecomunicaciones de mayor crecimiento a nivel global. Identificado por su capacidad de innovación.",
+    "descripcionempresa":"Bitel ofrece servicios con una red UMTS en la frecuencia de 900 MHz y 1900 MHz, también dispone de redes LTE en la frecuencia de 900 MHz y 2.6 GHz, actualmente es el operador de telefonía móvil con la mayor cobertura 3G y 4G."
+  }
+}

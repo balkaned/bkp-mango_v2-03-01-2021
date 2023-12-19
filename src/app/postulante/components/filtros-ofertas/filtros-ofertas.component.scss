@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import "./../../../../assets/styles/variables";
+
+.form-group {
+  margin-bottom: 0
+}
+  
+.categoria-filtro {
+  font-family: $open-sans-bold;
+  font-size: $normal-font-size;
+  color: $mango-text-darker;
+  margin-bottom: 0.25rem
+}
+
+.form-check-label {
+  font-family: $open-sans-regular;
+  font-size: $big-font-size;
+  color: $mango-text-dark;
+}
+
+div.titulo {
+  svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+  }
+  span {
+    font-family: $open-sans-bold;
+    font-size: $bigger-font-size;
+    color: $mango-text-dark;
+  }
+}
+
+.grupo-filtro {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.45);
+  border-radius: 15px;
+  padding-bottom: 1rem;
+}
+
+:host {
+  display: block;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(0,0,0,.35);
+  padding: 0.75rem;
+  padding-top: 0.5rem
+}
+
+.filter-item {
+  border-radius: 5px;
+  background-color: #ffa;
+  cursor: pointer;
+}
+
+.filter-item > .col-auto {
+  font-family: $open-sans-regular;
+  font-size: $smaller-font-size;
+}
+
+.compress_toogle > div > span {
+  color: blue;
+  font-family: $open-sans-regular;
+  font-size: $smaller-font-size;
+}
+
+.compress_toogle:hover > div > span,
+.compress_toogle:active > div > span
+{
+  text-decoration: underline;
+}
+
+.compress_toogle > div {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.caret,
+.trash-icon {
+  height: 1rem;
+  width: auto;
+}

@@ -1,0 +1,29 @@
+
+<header class="container-fluid">
+  <div class="container p-0">
+    <div class="row">
+      <div class="col-auto">
+        <!-- <img src="./assets/img/logo.png" class="logo-mango" (click)="irAlHome()"/> -->
+      </div>
+      <div class="col align-self-center">
+        <ng-content></ng-content>
+      </div>
+      <div class="col-auto align-self-center" [hidden]="simpleMode">
+        <app-header-session></app-header-session>
+      </div>
+    </div>
+  </div>
+  <div class="row p-0" [hidden]="simpleMode">
+    <div class="col hr p-0">
+      <hr/>
+    </div>
+  </div>
+  <div class="container p-0" [hidden]="simpleMode">
+    <marquee class="w-100 text-right m-1">¡Te ayudamos en la b&uacute;squeda de t&uacute; empleo ideal con m&eacute;todos de b&uacute;squeda efectivos!</marquee>
+  </div>
+  <div class="row p-0" [hidden]="simpleMode">
+    <div class="col hr p-0">
+      <hr/>
+    </div>
+  </div>
+</header>

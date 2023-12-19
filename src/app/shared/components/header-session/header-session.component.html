@@ -1,0 +1,60 @@
+<ng-container *ngIf="authenticationService?.loggedIn$.value === true; else NotLoggedIn">
+  <div class="row">
+    <div class="col-auto align-self-start">
+      <div class="row user-row justify-content-center"
+        [tooltip]="LoggedInToolTip"
+        placement="bottom"
+        triggers=""
+        #pop="bs-tooltip">
+        <div class="col-auto user-name pr-0">{{authenticationService?.authentication?.nombres}}</div>
+        <!-- <div class="col-auto user-name pr-0">{{user.nombres}}</div> -->
+        <div class="col-auto align-self-end caret-col pl-1" (click)="toogleTooltip(pop)">
+          <img
+            class="caret"
+            [hidden]="showTooltip"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHZJREFUWIXtkM0NQFAQBodQhJO7znQiUYEKROhGQVxdvMe+H4l8k+xps5nJghBCiI8pPLse6AIdOzBZDlvgiDSNJaAE1gjyGfenndTAFiBfgMoqD42IIrdGRJW/jUgifxqRVO6LyCK/i8gqv0aMwPCFXAgh/sMJC49n4x9x1gIAAAAASUVORK5CYII="/>
+          <img
+            class="caret"
+            [hidden]="!showTooltip"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHdJREFUWIXtj7ENgDAMBE+CHSjoKJmESShYjl3oWQCJFQhNSohInEDBn+TSvjMIIYT4O5VxfwA6YM3QEs0EOD/jl/LXI67kr0WE5MUjnsiLRcTIs0ekyLNFWOTmiDaD3AEH0NxJ6kDABsxAn/qBZwF24w0hhCjHCRkbZSjKn8DqAAAAAElFTkSuQmCC"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <img class="user-image" [src]="authenticationService?.authentication?.ruta ? authenticationService.authentication.ruta : './assets/img/user-placeholder.png'"/>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #LoggedInToolTip >
+  <div class="row logged-in-tooltip-row pl-3 pr-3">
+    <div class="col-auto p-0">
+      <img src="data:image/png;base64,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"/>
+    </div>
+    <div class="col text-left p-0" (click)="irAMiPerfil()"><span class="pl-1">Mi Perfil</span></div>
+  </div>
+  <div *ngIf="authenticationService?.authentication?.tipoUsuario == 2" class="row logged-in-tooltip-row pl-3 pr-3">
+    <div class="col-auto p-0">
+      <img src="data:image/png;base64,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"/>
+    </div>
+    <div class="col text-left p-0" (click)="irAMisPostulaciones()"><span class="pl-1">Mis postulaciones</span></div>
+  </div>
+  <div class="row logged-in-tooltip-row pl-3 pr-3 pt-3">
+    <div class="col-auto p-0 clickable" (click)="cerrarSesion()">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAM5JREFUWIXtlkESwiAMRR+OK4/iKbyJ7j2UPUoPoUdpt7hwmKlpO9IQgov+GViF8EggJACROgo5RodKm29SFKMHLgb+1AClIGYAWhBzgK0g1QByHUu7Dji1BIjACzh7Aaz5H4BbS4A0OkRKSgG2rv9KSVCcSpZYbSkfgXvrUhzT5J2CJ5NX4X0JHxhfwlyAAbjmEJYCSLtZyL0BZiGfyuIZLgHk2AF/0BHtADvAUbFG+/ksqnkE4NNo9tQrxeYg1fULxE1rIO6SIM2UQEz1BoNTBOTvUvoYAAAAAElFTkSuQmCC"/>
+    </div>
+    <div class="col p-0 text-left clickable" (click)="cerrarSesion()">
+      <span class="pl-1">Cerrar Sesi&oacute;n</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #NotLoggedIn>
+  <a class="link-empresas" (click)="iniciarSesion()">Iniciar Sesion</a>
+  <a class="btn btn-primary boton-iniciar-sesion" [routerLink]="['/sign-up']" >Registrarme</a>
+  <!-- <a class="btn btn-info boton-iniciar-sesion" [routerLink]="['/sign-up']" >Registrarme</a> -->
+
+</ng-template>
+
+
+

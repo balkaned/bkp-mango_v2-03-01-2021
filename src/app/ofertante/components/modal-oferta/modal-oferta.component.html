@@ -1,0 +1,56 @@
+<div class="modal-header"> 
+  <h4 class="modal-title">Nueva Oferta Laboral</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form  [formGroup]="forma" (ngSubmit)="registrarOferta()">
+<div class="row ml-0 mr-0 pl-0 pr-0">
+  <div class="col-12 col-md-12 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Posici&oacute;n</span>
+        <input class="input100 form-control" type="text" formControlName="posicion" name="posicion" placeholder="Posición"> 
+    </label>
+  </div>
+</div>
+
+<div class="row ml-0 mr-0 pl-0 pr-0">
+  <div class="col-12 col-md-6 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Años de Experiencia</span>
+        <input class="input100 form-control" type="number" formControlName="anioexperiencia" name="anioexperiencia" placeholder="Años de Experiencia"> 
+    </label>
+  </div>
+
+  <div class="col-12 col-md-6 ml-0 pl-0">
+    <label class="w-100">
+      <span class="w-100">Salario</span>
+      <input class="input100 form-control" type="number" formControlName="salario" name="salario" placeholder="Salario"> 
+    </label>
+  </div>
+</div>
+
+<label class="w-100">
+  <span class="w-100">Resumen (m&aacute;x 250 caracteres)</span>
+  <textarea class="form-control" formControlName="resumen" name="resumen"></textarea>
+</label>
+
+
+
+
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <button
+      class="btn"
+      [ngClass]="{ 'btn-secondary': getEstado() === 1, 'btn-primary': getEstado() === 0 }" type="submit">
+      Ofertar
+    </button>
+  </div>
+</div>
+
+</form>
+</div>
+
+

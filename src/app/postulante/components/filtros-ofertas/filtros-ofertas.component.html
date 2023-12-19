@@ -1,0 +1,112 @@
+<!-- <div class="grupo-filtro m-2" *ngIf="items_seleccionados.length">
+  <h3 class="categoria-filtro pb-0 pt-3 pl-3">Agregados</h3>
+  <ng-container *ngFor="let item of items_seleccionados; let i = index">
+    <div
+      class="filter-item row pl-2 mt-2 w-75 ml-3 justify-content-between"
+      [hidden]="expandido[i] === false && j > 2"
+      (click)="eliminar(item)">
+      <div class="col-auto plus">{{item.nombre}}</div>
+      <div class="col-auto label pl-0">
+        <img class="trash-icon"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAXpJREFUWIXtljtLA0EUhb+TKAGjdoKF4hNMZ2UEK/HfWPiX/Af2NrYhIIiVlRpDrKJCUDRR1GuxuzCZ7CYTH5V7YFjm7JlzzzyKCznCUJFUl/QiqTdidCXVgY1fqy7pVJKNOWpB3oEB3oDJeGrAY4Z01vHsmtlUiH9IgPd4V59AdYh0xzmB3q8U9wLcB2g74wSYSOFKwALp11MEKiM8C0kWT2tAExgabFrS1TceXOi4BPreRcELsAysjtjhT7AGLLpE0RO0JRVjft77f0F0PSWHawFPRK8/QQdoAHMO9wrUzewQOAqKKunWObrjmK46XJvoOMuSHhIe2IzXnzjam6w6/hVkITG4drg28AI8A3cO34y/jRDj0AB/hjxAHiAPkAfIA+QBQgNsAWVgz+GWgBVgnf4mYxeYideMRGZbLqlF1BsmeGewh/yMv/5GfG3DzFI7rWEncO7N0xrYQoaHrz3LKpJmCoCZ7UsqAdsMtm6h+ABqZnbwzfX/AF+yhn1oT/HdngAAAABJRU5ErkJggg=="/>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div *ngFor="let categoria of categorias; let i = index" class="grupo-filtro m-2">
+  <h3 class="categoria-filtro pb-0 pt-3 pl-3"
+  [style.paddingTop]="items_seleccionados.length ? '20px': '0'">{{categoria.nombre}}</h3>
+  <ng-container *ngFor="let item of items[i]; let j = index">
+    <div
+      class="filter-item row pl-2 mt-2 w-75 ml-3"
+      [hidden]="expandido[i] === false && j > 2"
+      (click)="seleccionar(item)">
+      <div class="col-auto plus">+</div>
+      <div class="col-auto label pl-0">{{item.nombre}}</div>
+    </div>
+  </ng-container>
+  <div class="row compress_toogle justify-content-end" (click)="expandido[i] = !expandido[i]">
+    <div class="col-auto pr-0" >
+      <span *ngIf="!expandido[i]">Ver m&aacute;s</span>
+      <span *ngIf="expandido[i]">Ver menos</span>
+    </div>
+    <div class="col-auto pl-1 align-self-end mr-4">
+      <img
+        class="caret"
+        [hidden]="expandido[i]"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHZJREFUWIXtkM0NQFAQBodQhJO7znQiUYEKROhGQVxdvMe+H4l8k+xps5nJghBCiI8pPLse6AIdOzBZDlvgiDSNJaAE1gjyGfenndTAFiBfgMoqD42IIrdGRJW/jUgifxqRVO6LyCK/i8gqv0aMwPCFXAgh/sMJC49n4x9x1gIAAAAASUVORK5CYII="/>
+      <img
+        class="caret"
+        [hidden]="!expandido[i]"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHdJREFUWIXtj7ENgDAMBE+CHSjoKJmESShYjl3oWQCJFQhNSohInEDBn+TSvjMIIYT4O5VxfwA6YM3QEs0EOD/jl/LXI67kr0WE5MUjnsiLRcTIs0ekyLNFWOTmiDaD3AEH0NxJ6kDABsxAn/qBZwF24w0hhCjHCRkbZSjKn8DqAAAAAElFTkSuQmCC"/>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary w-100 text-center mt-2">ESTABLECER FILTROS</button>
+
+<ng-template #item1>
+  <div class="form-group ml-4 mr-2">
+    <div class="form-check">
+      <input
+      class="form-check-input"
+      type="checkbox"
+      (change)="onItemChange(item.id_filtro, $event.target.checked)">
+      <label class="form-check-label">{{item.nombre}}</label>
+    </div>
+  </div>
+</ng-template> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="titulo pt-3 pl-3 pr-3">
+  <svg xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M-1-1h582v402H-1z"/><g><path fill="#929aa2" d="M1.75 7.75h6.68c.336 1.295 1.504 2.259 2.903 2.259s2.567-.964 2.903-2.259H24.25a.75.75 0 0 0 0-1.5H14.236c-.336-1.295-1.504-2.259-2.903-2.259S8.766 4.955 8.43 6.25H1.75a.75.75 0 0 0 0 1.5zm9.583-2.259c.832 0 1.509.677 1.509 1.509s-.677 1.509-1.509 1.509S9.824 7.832 9.824 7s.677-1.509 1.509-1.509zM24.25 12.25h-1.606c-.336-1.295-1.504-2.259-2.903-2.259s-2.567.964-2.902 2.259H1.75a.75.75 0 0 0 0 1.5h15.089c.335 1.295 1.503 2.259 2.902 2.259s2.567-.964 2.903-2.259h1.606a.75.75 0 0 0 0-1.5zm-4.509 2.259c-.832 0-1.509-.677-1.509-1.509s.677-1.509 1.51-1.509a1.51 1.51 0 0 1 0 3.018zM24.25 18.25H9.718a3.005 3.005 0 0 0-2.902-2.259 3.006 3.006 0 0 0-2.902 2.259H1.75a.75.75 0 0 0 0 1.5h2.164a3.006 3.006 0 0 0 2.902 2.259 3.005 3.005 0 0 0 2.902-2.259H24.25a.75.75 0 0 0 0-1.5zM6.816 20.509c-.832 0-1.508-.677-1.508-1.509s.676-1.509 1.508-1.509c.831 0 1.508.677 1.508 1.509s-.677 1.509-1.508 1.509z"/></g></svg>
+  <span>Filtros</span>
+</div>
+<ng-container *ngFor="let categoria of categorias; let i = index">
+  <h3 class="categoria-filtro p-3"
+  [style.paddingTop]="i === 0 ? '0' : '20px'">{{categoria.nombre}}</h3>
+  <ng-container *ngFor="let item of items[i]">
+    <div class="form-group ml-4 mr-2">
+      <div class="form-check">
+        <input
+        class="form-check-input"
+        type="checkbox"
+        (change)="onItemChange(item.id_filtro, $event.target.checked)">
+        <label class="form-check-label">{{item.nombre}}</label>
+      </div>
+    </div>
+  </ng-container>
+
+
+  
+</ng-container> -->
+
+
+<div class="titulo pt-3 pl-3 pr-3">
+  <svg xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M-1-1h582v402H-1z"/><g><path fill="#929aa2" d="M1.75 7.75h6.68c.336 1.295 1.504 2.259 2.903 2.259s2.567-.964 2.903-2.259H24.25a.75.75 0 0 0 0-1.5H14.236c-.336-1.295-1.504-2.259-2.903-2.259S8.766 4.955 8.43 6.25H1.75a.75.75 0 0 0 0 1.5zm9.583-2.259c.832 0 1.509.677 1.509 1.509s-.677 1.509-1.509 1.509S9.824 7.832 9.824 7s.677-1.509 1.509-1.509zM24.25 12.25h-1.606c-.336-1.295-1.504-2.259-2.903-2.259s-2.567.964-2.902 2.259H1.75a.75.75 0 0 0 0 1.5h15.089c.335 1.295 1.503 2.259 2.902 2.259s2.567-.964 2.903-2.259h1.606a.75.75 0 0 0 0-1.5zm-4.509 2.259c-.832 0-1.509-.677-1.509-1.509s.677-1.509 1.51-1.509a1.51 1.51 0 0 1 0 3.018zM24.25 18.25H9.718a3.005 3.005 0 0 0-2.902-2.259 3.006 3.006 0 0 0-2.902 2.259H1.75a.75.75 0 0 0 0 1.5h2.164a3.006 3.006 0 0 0 2.902 2.259 3.005 3.005 0 0 0 2.902-2.259H24.25a.75.75 0 0 0 0-1.5zM6.816 20.509c-.832 0-1.508-.677-1.508-1.509s.676-1.509 1.508-1.509c.831 0 1.508.677 1.508 1.509s-.677 1.509-1.508 1.509z"/></g></svg>
+  <span>Filtros</span>
+</div>
+<div class="dropdown" *ngFor="let categoria of categorias; let i = index">
+  <button class="btn dropdown-toggle col-md-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{categoria.nombre}}
+  </button>
+  
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" *ngFor="let item of items[i]">{{item.nombre}}</a>
+  </div>
+</div>

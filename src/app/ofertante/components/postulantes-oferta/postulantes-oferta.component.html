@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col-auto">
+        <img
+          class="logo-empresa"
+          [src]="ofertaSeleccionada?.ruta ? ofertaSeleccionada.ruta : './assets/img/image-placeholder.png'"/>
+      </div>
+      <div class="col">
+        <p class="titulo mb-0">{{ofertaSeleccionada?.posicion}}</p>
+        <!-- <p class="fecha">{{ ofertaSeleccionada?.fechapublicacion | date:'short':'UTC-5':'es_PE' }} - {{ ofertaSeleccionada?.fechapublicacion | tiempoDesde }}</p>         -->
+        <p>{{ ofertaSeleccionada?.resumen }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto">
+    <img
+      (click)="onRetroceder()"
+      class="icono-back"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEyElEQVRoge2Zz09UVxTHP+c9lE0TIYNJS6JbB+rKXW2aTAdtuqpdONigVZvURPwHrKEwz0FS/QdqExcVRYODG7rTVkLStN25MjD+A3QhE+xS4L3jYh4y7837cd+A2Bi+u7n3nnO+Z96955x7LuxiF1uCbKcydQpd2NYRkD5Uu1G6fCsvEVkBXcT1nooz/3K7bG7ZAXUKeWzrFHAS5bCh1WfAQ1zvgTjzta3Yb9sBrXz+KUgZOL4VAsBjLK7Kj3N/tyOc2QF1jvdiuTeBr9oxmIDfsNcuysif/2YRyuSAXh04hehNoDsTNXOsoDIs5ScPTAUsk0WqiI4Xy4hO8/bIA3QjOq2VgTFVsz83dZEqwnjxZ+Dilullwy+Mzl0SQZMWpX+B8YFRdp48wEXfdiISv4C/56e3j1MbUPkm6UzEOuBHm2e83T1vghXstY/jolP8FmqESlPyS8ByBlLLvowJunH33oybjHRArxWPYhrnlRvkcwfxvAPAlIHEFJ53gHzuIMoNIxvoCa0MfBI10xG53qNsppcJxuZG/UjharV0nlod4EzkeuEuh3LfyeCMC6DKFSrFdYQRA2tl4MtWlWFOTiGPZS0akL/B2NyVcJjTasnm+fIkKqdDElPkc+c3yL9ZrwiV4k8Il1Ntel5fuHZq3UKNwiwNS/TlRqJitAzOuBzqOQfc3xzUe1HkAURQ+nIjmJwJyx5sGYpYdjJVEexl4cWeuEkZnHHxvA0n7nOo51wU+Tdo6NqbalW0FB4KOKBOocuwJO7Bsm5ptWTH2nLm1/G8c3heInmtlmws6xbQk2pVOazXj+1rHgp+Ads6kqpkE2d4Xv81zQlx5tdj+VRLNrX6beIOfRReaYBjaAtJn7EiAOVbavXbSU7Eim4c9izkASz6gz8DWrWdrHuG58uTWZxQp9BBrX4nIlIZCAc5hhzw77CZlcppavU76hSi80rzUqfQgWVNAkPt2QpyNLoP/J8RdEBor1vQiPNnkw7sm6Ub0ak5T2SyFeQYckBW2lA5lRrnwxyc+XXyubOI3stsLcQxtIU0vYQIKONuXIZNFd3M2CYF4CY8Fpp/Bh1wvacZVE01F2ZRUKfQkXSwZXDGJZ87TxYnOiXAMeCAOPMv/aZTGpbp6vw+jTyWNYllJYZYv+y4gMl9QngmP/zxX/NQVBR6mKoIVvnwg/gMGwyVQ9TqdxLzRP/+NWA11arKTHio1QHXM+nJ9LJYn4hqffi1TTjOD8UlO1WExfoE0Jtq1XOr4aEWB/x6+3GqMuEyleJ4sxNN5UFrkmoku0DZ4d8Fxo3uAsijqD5q5KVerxWP4vFXulIaF5u+3AgLL/b4VWVabTOF512gf/8ai/UJM/IAclTGnvzTMhrLq1Kcxbz/uUSjnk8viRtYprHn07cNADIrY0++jpqJLyU8exgwTWy9mJPHX2tInhXs1eG4yVgHxPl9CZVYwR2DynBSxzqxmGt0xMSsQ/FWIOW0TvX739wVQRmdu7SjX0J0zIQ8vAcPHNmfmCY++6jRq9QTWWVTqMxiryYe2Eipds35ya4MfNGuDp/CI+BqVJIykt6a8Y1WpD2IaCnTM6vKDJ5bfWfPrFHQ68f28UqPYNEf+dDtsUCnPA2XxLvYxTvEayTJ4DnslYBYAAAAAElFTkSuQmCC"/>
+  </div>
+</div>
+<hr/>
+<h2 class="fuente-grande fuente-gris">
+  {{ postulantes ? 
+      (
+        postulantes.length ? postulantes.length + ' Postulante(s) en total:'
+        : 'Lo sentimos, tu oferta aun no ha recibido una postulacion'
+      ): 'Obteniendo postulantes...' }}
+</h2>
+
+<!-- <div class="row postulantes" *ngIf="postulantes?.length">
+  <ng-container
+    *ngFor="let postulante of postulantes; let i = index">
+    <div class="col-4" [ngClass]="{'equal': postulantes.length > 1}">
+      <ng-template
+        [ngTemplateOutlet]="TemplatePostulante"
+        [ngTemplateOutletContext]="{postulante:postulante}">
+      </ng-template>
+    </div>
+  </ng-container>
+</div> -->
+
+<div *ngIf="postulantes?.length">
+  <ng-container
+    *ngFor="let postulante of postulantes; let i = index">
+    <div class="col-12" [ngClass]="{'equal': postulantes.length > 1}">
+      <ng-template
+        [ngTemplateOutlet]="TemplatePostulante"
+        [ngTemplateOutletContext]="{postulante:postulante}">
+      </ng-template>
+    </div>
+  </ng-container>
+</div>
+ 
+<ng-template #TemplatePostulante let-postulante="postulante">
+    <div class="row postulante w-100 p-2 ml-0 mr-0 mt-3">
+      <!-- <div class="col-auto align-self-center p-0">
+        <img
+          class="foto-postulante"
+          [src]="postulante.foto ? postulante.foto : './assets/img/user-photo-placeholder.png'"/>
+      </div> -->
+      <div class="col">
+        <div class="row justify-content-between">
+          <div class="col fuente-pequeña fuente-gris pr-0">
+              {{postulante.nombres}} {{postulante.apellidos}} - {{postulante.titulo.length >= 36 ? postulante.titulo.substring(0, 33) + '...': postulante.titulo}}
+          </div>
+          <div class="col-auto align-self-center">
+            <img class="imagen-icono" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABEUlEQVRYhe3XMU7DQBBA0T9WQpE+EpegS5GGwiZUXCOnoLAUFzkFB0FKsimoaGg4BJY4AqChQkTCOLP2rNNkSlva91erlWzRVX6HyANwiXl0K+X+tvFNVQQgNy4UsngcQLKWl5OIhQrRqlAAKYPERcSPrq+nfI53wNXPs7adpMRfBw34g48+bgYLaMLl/ul9kIBjeNIAC54swIonCYjB3QNicYDRCfFnt4AuO5cyzMHhCLrgh9MroC/eK8AD7xzghXcK8MQh8hZ44lrlG1QuzAHeOwdZIMYj8Md/52hAStwUwNf4MRVuC1AU4SUFDoZbIGWYeaOHM9hX8TngHPDfiFbFG9E/p25TZ6gugfoUOKrLb3JJww6I78CwAAAAAElFTkSuQmCC"/>
+          </div>
+        </div>
+            <div class="fecha fuente-pequeña fuente-gris">{{ postulante.fechaPostulacion | date:'short':'UTC-5':'es_PE' }}</div>
+        <hr class="mt-1 mb-1"/>
+        <!-- <p class="resumen fuente-normal fuente-gris">{{ postulante.resumen.length > 120 ? postulante.length.substring(0, 120) : postulante.resumen }}...</p> -->
+        <p class="resumen fuente-normal fuente-gris">POSTULANTE RESUMEN...</p>
+      </div>
+    </div>
+
+    <!-- <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </ng-template>
